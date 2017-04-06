@@ -12,16 +12,7 @@ import java.util.Scanner;
 public class Execute {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner s = new Scanner(new File("path/to/the/thing"));
-
-        while(s.hasNextLine()){
-            try {
-                BufferedImage image = ImageIO.read(new File(s.nextLine()));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
+        Image i = new Image();
     }
 
 }

@@ -1,10 +1,13 @@
 import legacy.scantron.Pixel;
+import org.apache.commons.io.IOUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by preston on 3/28/17.
@@ -15,6 +18,7 @@ import java.io.IOException;
 public class Image {
     private BufferedImage image;
     private Pixel[] pixelArray;
+    byte[] b;
 
     public Image(String path){
         try {
@@ -25,13 +29,13 @@ public class Image {
         }
     }
 
-    public Image(File file){
+    public Image(){
         try {
-            image = ImageIO.read(file);
-            generatePixelArray();
+            b = IOUtils.toByteArray(new FileInputStream("C:\\Users\\131111\\Downloads\\Lone_Star_Soccer_Logo.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(Arrays.toString(b));
     }
 
     public Image(BufferedImage image){
@@ -40,10 +44,7 @@ public class Image {
     }
 
     private void generatePixelArray(){
-        byte[] raw = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
-        for(int i = 0; i<300000/4-3; i++){
-            pixelArray[i] = new Pixel(raw[i],raw[i+1],raw[i+2],raw[i+3]);
-        }
+
     }
 
     void calculateSectorRatio(){
