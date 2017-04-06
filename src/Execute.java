@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Execute {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Image i = new Image();
+        Image.getRatios(new File("C:\\Users\\131111\\Downloads\\64.jpg"));
     }
 
 }
