@@ -1,11 +1,6 @@
-import legacy.scantron.Pixel;
-import org.apache.commons.io.IOUtils;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
